@@ -15,9 +15,6 @@ public class GameController : MonoBehaviour
     public Text endPointText;
     public Text textPoint;
 
-    public Sprite restartButtonIdle;
-    public Sprite restartButtonHover;
-    // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 0;
@@ -26,7 +23,6 @@ public class GameController : MonoBehaviour
         isTheFirstStart = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isEndGame)
@@ -39,21 +35,6 @@ public class GameController : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
                 Time.timeScale = 1;
         }
-    }
-
-    public void RestartButtonIdle()
-    {
-        restartButton.GetComponent<Image>().sprite = restartButtonIdle;
-    }
-
-    public void RestartButtonHover()
-    {
-        restartButton.GetComponent<Image>().sprite = restartButtonHover;
-    }
-
-    public void RestartButtonExit()
-    {
-        restartButton.GetComponent<Image>().sprite = restartButtonIdle;
     }
 
     public void GetPoint()
@@ -79,6 +60,11 @@ public class GameController : MonoBehaviour
         endPointText.text = "Your point \n" + gamePoint.ToString();
         isTheFirstStart = false;
     }
+
+    // onclick
+    public void OnExitGame() => Application.Quit();
+
+    public void OnReturnMenu() => SceneManager.LoadScene(1);
 }
 
     

@@ -14,7 +14,7 @@ public class ObjectMove : MonoBehaviour
     {
         obj = gameObject;
         oldPosition = obj.transform.position;
-        range = 27.2f;
+        range = 10f;
         moveSpeed = 2;
     }
 
